@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Plane;
+use App\Entity\Company;
 use App\Entity\PlanesCategory;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -48,6 +49,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
             MenuItem::linkToCrud('Create Category', 'fas fa-plus', PlanesCategory::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Categories', 'fas fa-eye', PlanesCategory::class)->setAction(Crud::PAGE_INDEX),
+        ]);
+
+        yield MenuItem::section('Companies', 'fas fa-buildings');
+
+        yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
+            MenuItem::linkToCrud('Create Company', 'fas fa-plus', Company::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Companies', 'fas fa-eye', Company::class)->setAction(Crud::PAGE_INDEX),
         ]);
 
     }

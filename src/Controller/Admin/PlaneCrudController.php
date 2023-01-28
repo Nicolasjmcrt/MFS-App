@@ -6,6 +6,7 @@ use App\Entity\Plane;
 use DateTimeImmutable;
 use InvalidArgumentException;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\QueryBuilder;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -55,7 +56,9 @@ class PlaneCrudController extends AbstractCrudController
                 ->setUploadDir(self::PLANES_UPLOAD_DIR)->setUploadedFileNamePattern('[randomhash].[extension]')->setRequired(false),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
-            AssociationField::new('category'),
+            AssociationField::new('category')->setQueryBuilder(function(QueryBuilder $queryBuilder) {
+                $queryBuilder->where('entity.active = true');
+            }),
             IntegerField::new('maxSpeed'),
             IntegerField::new('cruisingSpeed'),
             TextField::new('engine'),
@@ -69,6 +72,7 @@ class PlaneCrudController extends AbstractCrudController
         ];
     }
 
+    /*
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         if (!$entityInstance instanceof Plane) {
@@ -88,6 +92,7 @@ class PlaneCrudController extends AbstractCrudController
         
         parent::updateEntity($entityManager, $entityInstance);
     }
+    */
     
     public function duplicatePlane(AdminContext $context, EntityManagerInterface $em, AdminUrlGenerator $adminUrlGenerator): Response
     {

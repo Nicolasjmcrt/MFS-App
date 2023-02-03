@@ -51,7 +51,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Show Categories', 'fas fa-eye', PlanesCategory::class)->setAction(Crud::PAGE_INDEX),
         ]);
 
-        yield MenuItem::section('Companies', 'fas fa-buildings');
+        yield MenuItem::section('Companies', 'fas fa-building');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
             MenuItem::linkToCrud('Create Company', 'fas fa-plus', Company::class)->setAction(Crud::PAGE_NEW),

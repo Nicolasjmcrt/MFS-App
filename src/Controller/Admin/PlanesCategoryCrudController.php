@@ -11,9 +11,15 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class PlanesCategoryCrudController extends AbstractCrudController
 {
+
+    public const CATEGORIES_BASE_PATH = 'uploads/images/categories';
+    public const CATEGORIES_UPLOAD_DIR = 'public/uploads/images/categories';
+
     public static function getEntityFqcn(): string
     {
         return PlanesCategory::class;
@@ -25,6 +31,10 @@ class PlanesCategoryCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
+            TextEditorField::new('description'),
+            ImageField::new('image')
+            ->setBasePath(self::CATEGORIES_BASE_PATH)
+            ->setUploadDir(self::CATEGORIES_UPLOAD_DIR)->setUploadedFileNamePattern('[randomhash].[extension]')->setRequired(false),
             BooleanField::new('active'),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),

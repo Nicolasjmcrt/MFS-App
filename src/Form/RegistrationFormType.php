@@ -23,13 +23,13 @@ class RegistrationFormType extends AbstractType
                 'attr'=> [
                     'class' => 'form-control'
                 ],
-                'label' => 'Last name'
+                'label' => 'Nom'
             ])
             ->add('firstname', TextType::class, [
                 'attr'=> [
                     'class' => 'form-control'
                 ],
-                'label' => 'First name'
+                'label' => 'Prénom'
             ])
             ->add('email', EmailType::class, [
                 'attr'=> [
@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label' => 'I agree to the terms of use and privacy policy'
+                'label' => 'J\'accepte les conditions d\'utilisation et la politique de confidentialité'
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -54,14 +54,14 @@ class RegistrationFormType extends AbstractType
                     'autocomplete' => 'new-password',
                     'class' => 'form-control'
                 ],
-                'label' => 'Password',
+                'label' => 'Mot de passe',
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

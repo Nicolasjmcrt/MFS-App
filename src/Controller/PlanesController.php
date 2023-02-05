@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Plane;
+use App\Repository\PlanesCategoryRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,15 +12,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PlanesController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(PlanesCategoryRepository $planesCategoryRepository): Response
     {
         return $this->render('planes/index.html.twig', [
-            'controller_name' => 'PlanesController',
+            'categories' => $planesCategoryRepository->findAll(),
         ]);
     }
 
     #[Route('/{id}', name: 'show')]
-    public function show(Plane $plane, $id): Response
+    public function show(Plane $plane): Response
     {
         return $this->render('planes/show.html.twig', compact('plane'));
     }

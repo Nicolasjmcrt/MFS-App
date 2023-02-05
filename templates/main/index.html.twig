@@ -4,12 +4,61 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container-fluid">
+	<section class="container-fluid hero-container">
+		<img src="{{ asset('uploads/images/main/mfs-40th.webp') }}" class="img-fluid" alt="MFS Hero Image">
 		<div class="row">
-			<div class="col">
-				<h1>Welcome to the Microsoft Flight Simulator Fan App!</h1>
-				<p>An app made by the fans, for the fans!</p>
+			<div class="col-12">
+				<h1 class="text-center hero-h1">Bienvenue sur l'application non-officielle des fans de Microsoft Flight Simulator !</h1>
+				{# <p>Une application faite par des fans, pour les fans.</p> #}
 			</div>
 		</div>
-	</section>
-{% endblock %}
+		<div class="row home-row d-flex justify-content-center">
+			<p class="text-center">Bienvenue sur MFS App !<br>Ce site non-officiel est à principe collaboratif et chacun est libre d'apporter sa contribution<sup>*</sup>.<br>Envie d'ajouter un nouvel appareil, un aéroport ou une compagnie aérienne, il suffit juste de
+				<a href="{{ path('app_register') }}">s'inscrire</a>
+				et c'est à vous de jouer !</p>
+		</div>
+		<div class="container">
+			<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="{{ asset('uploads/images/main/micrsoft-flight-simulator-simulation-city_0.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('uploads/images/main/micrsoft-flight-simulator-simulation-city2_0.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('uploads/images/main/micrsoft-flight-simulator-simulation-hangar_0.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('uploads/images/main/micrsoft-flight-simulator-simulation-world_0.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<div class="row quote-row d-flex justify-content-center">
+			<figure class="text-center hero-blockquote">
+				<blockquote class="blockquote">
+					<p>"Une fois que vous aurez goûté au vol, vous marcherez à jamais les yeux tournés vers le ciel, car c’est là que vous êtes allés, et c’est là que toujours vous désirerez ardemment retourner."</p>
+				</blockquote>
+				<figcaption class="blockquote-footer">
+					<cite>Leonard De Vinci</cite>
+				</figcaption>
+			</figure>
+		</div>
+		<img src="{{ asset('uploads/images/main/mkh-bottom.webp') }}" class="img-fluid" alt="MFS Hero Image">
+	</div>
+</section>{% endblock %}

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('app_main') }}">MFS App</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,46 +7,32 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Home</a>
+					<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Dropdown
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="#">Action</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">Another action</a>
-						</li>
-						<li><hr class="dropdown-divider"></li>
-						<li>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</li>
-					</ul>
+					<a class="nav-link" href="{{ path('planes_index') }}">Appareils</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled">Disabled</a>
+					<a class="nav-link" href="#">Compagnies aériennes</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Aéroports</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 				{% if app.user %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('profile_index') }}">My account</a>
+						<a class="nav-link" href="{{ path('profile_index') }}">Mon compte</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_logout') }}">Sign out</a>
+						<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
 					</li>
 				{% else %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_login') }}">Sign in</a>
+						<a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_register') }}">Register</a>
+						<a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
 					</li>
 				{% endif %}
 			</ul>

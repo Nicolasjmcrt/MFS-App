@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!
+{% block title %}Connection
 {% endblock %}
 
 {% block body %}
@@ -15,16 +15,16 @@
 
 					{% if app.user %}
 						<div class="mb-3">
-							You are logged in as
+							Vous êtes connecté(e) en tant que 
 							{{ app.user.userIdentifier }},
-							<a href="{{ path('app_logout') }}">Logout</a>
+							<a href="{{ path('app_logout') }}">Se déconnecter</a>
 						</div>
 					{% endif %}
 
-					<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-					<label for="inputEmail">Email</label>
+					<h1 class="mb-3">Connectez vous</h1>
+					<label for="inputEmail">E-mail</label>
 					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-					<label for="inputPassword">Password</label>
+					<label for="inputPassword">Mot de passe</label>
 					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
 					<input
@@ -42,9 +42,9 @@
 										    #}
 
 					<button class="btn btn-outline-info mt-3" type="submit">
-						Sign in
+						Se connecter
 					</button>
-                    <a href="{{ path('app_register') }}" class="btn btn-sm btn-outline-secondary mt-3">Register</a>
+                    <a href="{{ path('app_register') }}" class="btn btn-sm btn-outline-secondary mt-3">S'inscrire</a>
 				</form>
 			</div>
 		</div>

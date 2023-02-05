@@ -1,4 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
+}
+
+.hero-container {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.row {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.home-row {
+    padding: 5vh 0;
+    background-color: #00314d;
+    color: #fff;
+}
+
+.hero-h1 {
+    position: relative;
+    top: -10vh;
+    color: #00314d;
+    font-weight: 300;
+}
+
+.aircrafts-h1 {
+    position: absolute;
+    top: 45vh;
+    color: #fff;
+    font-weight: 300;
+}
+
+.quote-row {
+    background-color: #00314d;
+    color: #fff;
+    padding: 5vh 0;
+}
+
+.hero-blockquote {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.blockquote-footer::before {
+    color: #fff;
+}
+
+cite {
+    color: #fff;
+}
+
+sup {
+    color: red;
+}
+
+.aircrafts-row {
+    background-color: #00314d;
+    color: #fff;
+    padding: 5vh 0;
+}
+
+.aircrafts-p {
+    font-weight: 300;
+    font-size: 23px;
+    margin-bottom: 0;
+    line-height: 70px;
+}
+
+
+footer {
+    background-color: #00314d;
+    color: #fff;
+    padding: 5vh 0;
+}
+
+.page-hero-img {
+    position: relative;
 }

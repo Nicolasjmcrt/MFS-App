@@ -5,7 +5,7 @@
 
 {% block body %}
 	<section class="container my-3">
-		<row>
+		<div class="row register-row d-flex align-items-center">
 			<div class="col">
 				<h1>Inscription</h1>
 
@@ -27,6 +27,6 @@
                 <a href="{{ path('app_login') }}" class="btn btn-sm btn-outline-secondary my-3">Se connecter</a>
 				{{ form_end(registrationForm) }}
 			</div>
-		</row>
+		</div>
 	</section>
 {% endblock %}

@@ -19,24 +19,67 @@ body {
     margin-right: 0!important;
 }
 
+.register-row {
+    height: 80vh;
+}
+
+.double-row > .left{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
 .home-row {
     padding: 5vh 0;
     background-color: #00314d;
     color: #fff;
 }
 
-.hero-h1 {
+.hero-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
     position: relative;
-    top: -10vh;
-    color: #00314d;
+}
+
+.img-hero {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-h1 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    transform: translate(-10%, -80%);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.home-first-p {
     font-weight: 300;
+    font-size: 22px;
+    font-style: italic;
+    width: 70%;
+}
+
+.figcaption {
+    margin-bottom: 0;
 }
 
 .aircrafts-h1 {
     position: absolute;
-    top: 45vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
-    font-weight: 300;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 50px;
 }
 
 .quote-row {

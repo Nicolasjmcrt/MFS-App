@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aéroports{% endblock %}
+
+{% block body %}
+<section class="container-fluid hero-container">
+		<div class="page-hero-img d-flex justify-content-center">
+			<img src="{{ asset('uploads/images/main/hero-airports-v2.webp') }}" alt="" class="img-fluid">
+			<h1 class="text-center aircrafts-h1">Liste des aéroports</h1>
+		</div>
+		{# <div class="row">
+			<div class="col">
+			</div>
+		</div> #}
+		<div class="row aircrafts-row">
+			<div class="col-12">
+				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des plus grands aéroports du monde.</p>
+			</div>
+		</div>
+        <div class="container">
+			<div class="row">
+				{% for airport in airports %}
+					<div class="col-12 col-lg-6 mx-auto my-3">
+						<div class="card h-100">
+							<img src="{{ asset('uploads/images/airports/' ~ airport.image) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h3 class="card-title">{{ airport.name|upper }}</h3>
+								<p class="card-text">Découvrez tous les détails concernant l'aéroport'
+									{{ airport.name }} .</p>
+								<p class="card-text">
+									<small class="text-muted">Mis à jour le
+										{{ airport.updatedAt|format_datetime(locale='fr') }}</small>
+								</p>
+								<a href="#" class="btn btn-primary">Découvrir {{ airport.name }}</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Aircrafts
+{% block title %}Appareils
 {% endblock %}
 
 {% block body %}
@@ -33,7 +33,7 @@
 									<small class="text-muted">Mis à jour le
 										{{ category.updatedAt|format_datetime(locale='fr') }}</small>
 								</p>
-								<a href="#" class="btn btn-primary">Voir les appareils</a>
+								<a href="#" class="btn btn-primary">Voir les {{ category.name|lower }}</a>
 							</div>
 						</div>
 					</div>

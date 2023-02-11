@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Airport;
 use App\Entity\Plane;
 use App\Entity\Company;
 use App\Entity\PlanesCategory;
@@ -44,7 +45,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Show Planes', 'fas fa-eye', Plane::class)->setAction(Crud::PAGE_INDEX),
         ]);
 
-        yield MenuItem::section('Categories', 'fas fa-warehouse');
+        yield MenuItem::section('Categories', 'fas fa-tags');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
             MenuItem::linkToCrud('Create Category', 'fas fa-plus', PlanesCategory::class)->setAction(Crud::PAGE_NEW),
@@ -56,6 +57,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
             MenuItem::linkToCrud('Create Company', 'fas fa-plus', Company::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Companies', 'fas fa-eye', Company::class)->setAction(Crud::PAGE_INDEX),
+        ]);
+
+        yield MenuItem::section('Airports', 'fas fa-plane-departure');
+
+        yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
+            MenuItem::linkToCrud('Create Company', 'fas fa-plus', Airport::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Airports', 'fas fa-eye', Airport::class)->setAction(Crud::PAGE_INDEX),
         ]);
 
     }

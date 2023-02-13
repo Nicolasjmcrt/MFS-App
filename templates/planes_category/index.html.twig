@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appareils
+{% endblock %}
+
+{% block body %}
+	<section class="container-fluid hero-container">
+		<div class="page-hero-img d-flex justify-content-center">
+			<img src="{{ asset('uploads/images/main/mkh-top.webp') }}" alt="" class="img-fluid">
+			<h1 class="text-center aircrafts-h1">Liste des appareils</h1>
+		</div>
+		{# <div class="row">
+			<div class="col">
+			</div>
+		</div> #}
+		<div class="row aircrafts-row">
+			<div class="col-12">
+				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des appareils présents dans le jeu.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				{% for category in categories %}
+					<div class="col-12 col-lg-6 mx-auto my-3">
+						<div class="card h-100">
+							<img src="{{ asset('uploads/images/categories/' ~ category.image) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h3 class="card-title">{{ category.name|upper }}</h3>
+								<p class="card-text">Retrouvez dans cette catégorie la liste des
+									{{ category.name|lower }}
+									contenus dans le jeu.<br><sup>*</sup>Certains appareils peuvent être issus de contenus additionnels.</p>
+								<p class="card-text">
+									<small class="text-muted">Mis à jour le
+										{{ category.updatedAt|format_datetime(locale='fr') }}</small>
+								</p>
+								<a href="{{ path('category_list', {id: category.id }) }}" class="btn btn-primary">Voir les {{ category.name|lower }}</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

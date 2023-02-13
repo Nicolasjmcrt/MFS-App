@@ -1,38 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Compagnies aériennes{% endblock %}
+{% block title %}Compagnies aériennes
+{% endblock %}
 
 {% block body %}
-    <section class="container-fluid hero-container">
+	<section class="container-fluid hero-container">
 		<div class="page-hero-img d-flex justify-content-center">
 			<img src="{{ asset('uploads/images/main/hero-companies.webp') }}" alt="" class="img-fluid">
 			<h1 class="text-center aircrafts-h1">Liste des compagnies aériennes</h1>
 		</div>
 		{# <div class="row">
-			<div class="col">
-			</div>
-		</div> #}
+							<div class="col">
+							</div>
+						</div> #}
 		<div class="row aircrafts-row">
 			<div class="col-12">
 				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des plus importantes compagnies aériennes du monde.</p>
 			</div>
 		</div>
-        <div class="container">
+		<div class="container my-5">
 			<div class="row">
 				{% for company in companies %}
-					<div class="col-12 col-lg-6 mx-auto my-3">
-						<div class="card h-100">
-							<img src="{{ asset('uploads/images/companies/' ~ company.image) }}" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h3 class="card-title">{{ company.name|upper }}</h3>
-								<p class="card-text">Découvrez tous les détails concernant la compagnie
-									{{ company.name }} .</p>
-								<p class="card-text">
-									<small class="text-muted">Mis à jour le
-										{{ company.updatedAt|format_datetime(locale='fr') }}</small>
-								</p>
-								<a href="#" class="btn btn-primary">Découvrir {{ company.name }}</a>
-							</div>
+					<div class="col-12 col-lg-4 mx-auto my-3">
+						<div class="card card-company h-100">
+								<a href="{{ path('companies_show', {id: company.id }) }}" class="d-flex justify-content-around align-items-center company-link"> <div class="airline-logo">
+									<img src="{{ asset('uploads/images/companies/' ~ company.image) }}" alt="">
+								</div>
+								<span class="test-link">{{ company.name }}</span>
+								{# <div id="{{ company.firstLetter }}"></div> #}
+								<div class="icon-chevron">
+									<img src="{{ asset('uploads/images/companies/chevron-right-solid.png') }}" alt="">
+								</div>
+							</a>
 						</div>
 					</div>
 				{% endfor %}

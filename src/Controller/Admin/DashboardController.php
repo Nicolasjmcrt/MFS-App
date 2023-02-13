@@ -38,6 +38,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+
+        yield MenuItem::linkToUrl('Accueil', 'fa fa-home', $this->generateUrl('app_main'));
+
         yield MenuItem::section('Appareils', 'fas fa-plane');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
@@ -45,7 +48,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Liste appareils', 'fas fa-eye', Plane::class)->setAction(Crud::PAGE_INDEX),
         ]);
 
-        yield MenuItem::section('Categories d\'appareils', 'fas fa-tags');
+        yield MenuItem::section('Catégories d\'appareils', 'fas fa-tags');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
             MenuItem::linkToCrud('Ajouter catégorie', 'fas fa-plus', PlanesCategory::class)->setAction(Crud::PAGE_NEW),

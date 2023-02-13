@@ -34,7 +34,14 @@ class PlanesCategoryCrudController extends AbstractCrudController
             TextEditorField::new('description'),
             ImageField::new('image')
             ->setBasePath(self::CATEGORIES_BASE_PATH)
-            ->setUploadDir(self::CATEGORIES_UPLOAD_DIR)->setUploadedFileNamePattern('[randomhash].[extension]')->setRequired(false),
+            ->setUploadDir(self::CATEGORIES_UPLOAD_DIR)
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setRequired(false),
+            ImageField::new('hero_img')
+            ->setBasePath(self::CATEGORIES_BASE_PATH)
+            ->setUploadDir(self::CATEGORIES_UPLOAD_DIR)
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setRequired(false),
             BooleanField::new('active'),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),

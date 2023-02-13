@@ -32,6 +32,13 @@ class Company
     #[ORM\Column(length: 5)]
     private ?string $code = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $logo = null;
+
+    #[ORM\ManyToOne(inversedBy: 'companies')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?CompanyFirstLetter $first_letter = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +112,30 @@ class Company
     public function setCode(string $code): self
     {
         $this->code = $code;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): self
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getFirstLetter(): ?CompanyFirstLetter
+    {
+        return $this->first_letter;
+    }
+
+    public function setFirstLetter(?CompanyFirstLetter $first_letter): self
+    {
+        $this->first_letter = $first_letter;
 
         return $this;
     }

@@ -37,6 +37,9 @@ class PlanesCategory
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $hero_img = null;
+
     public function __construct()
     {
         $this->planes = new ArrayCollection();
@@ -150,6 +153,18 @@ class PlanesCategory
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getHeroImg(): ?string
+    {
+        return $this->hero_img;
+    }
+
+    public function setHeroImg(string $hero_img): self
+    {
+        $this->hero_img = $hero_img;
 
         return $this;
     }

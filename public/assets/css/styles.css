@@ -11,23 +11,24 @@ body {
 }
 
 .hero-container {
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .row {
-    margin-left: 0!important;
-    margin-right: 0!important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .register-row {
     height: 80vh;
 }
 
-.double-row > .left{
-    padding-left: 0!important;
-    padding-right: 0!important;
+.double-row>.left {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
+
 .home-row {
     padding: 5vh 0;
     background-color: #00314d;
@@ -128,4 +129,34 @@ footer {
 
 .page-hero-img {
     position: relative;
+}
+
+.card-company {
+    -webkit-box-shadow: 5px 4px 15px -8px rgba(0, 0, 0, 0.49);
+    box-shadow: 5px 4px 15px -8px rgba(0, 0, 0, 0.49);
+    transition: 300ms;
+}
+
+.card-company:hover {
+    transform: translate(0, -5px);
+}
+
+.company-link {
+    text-decoration: none;
+    color: #212529;
+    height: 60px;
+
+}
+
+.airline-logo {
+    height: 48px;
+}
+
+.airline-logo img {
+    height: 48px;
+    width: 48px;
+}
+
+.icon-chevron img {
+    height: 25px;
 }

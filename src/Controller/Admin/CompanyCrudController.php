@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class CompanyCrudController extends AbstractCrudController
 {
@@ -32,7 +33,13 @@ class CompanyCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('code'),
             TextEditorField::new('description'),
+            AssociationField::new('first_letter'),
             ImageField::new('image')
+            ->setBasePath(self::COMPANIES_BASE_PATH)
+            ->setUploadDir(self::COMPANIES_UPLOAD_DIR)
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setRequired(false),
+            ImageField::new('logo')
             ->setBasePath(self::COMPANIES_BASE_PATH)
             ->setUploadDir(self::COMPANIES_UPLOAD_DIR)
             ->setUploadedFileNamePattern('[randomhash].[extension]')

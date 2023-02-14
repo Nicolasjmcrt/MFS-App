@@ -1,0 +1,23 @@
+<div class="row mt-5">
+<h4 class="letter col-1 mt-3" id="B">B</h4>
+<div class="col-11"></div>
+<hr>
+	{% for company in companies %}
+		{% if company.firstLetter == 'B' %}
+            <div class="col-12 col-lg-4 my-2">
+			<div class="card card-company h-100">
+				<a href="{{ path('companies_show', {id: company.id }) }}" class="d-flex justify-content-around align-items-center company-link">
+					<div class="airline-logo">
+						<img src="{{ asset('uploads/images/companies/' ~ company.image) }}" alt="">
+					</div>
+					<span class="test-link">{{ company.name }}</span>
+					{# <div id="{{ company.firstLetter }}"></div> #}
+					<div class="icon-chevron">
+						<img src="{{ asset('uploads/images/companies/chevron-right-solid.png') }}" alt="">
+					</div>
+				</a>
+			</div>
+		</div>
+        {% endif %}
+	{% endfor %}
+</div>

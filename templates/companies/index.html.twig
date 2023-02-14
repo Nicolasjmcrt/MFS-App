@@ -10,32 +10,45 @@
 			<h1 class="text-center aircrafts-h1">Liste des compagnies aériennes</h1>
 		</div>
 		{# <div class="row">
-							<div class="col">
-							</div>
-						</div> #}
+									<div class="col">
+									</div>
+								</div> #}
 		<div class="row aircrafts-row">
 			<div class="col-12">
 				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des plus importantes compagnies aériennes du monde.</p>
 			</div>
 		</div>
 		<div class="container my-5">
-			<div class="row">
-				{% for company in companies %}
-					<div class="col-12 col-lg-4 mx-auto my-3">
-						<div class="card card-company h-100">
-								<a href="{{ path('companies_show', {id: company.id }) }}" class="d-flex justify-content-around align-items-center company-link"> <div class="airline-logo">
-									<img src="{{ asset('uploads/images/companies/' ~ company.image) }}" alt="">
-								</div>
-								<span class="test-link">{{ company.name }}</span>
-								{# <div id="{{ company.firstLetter }}"></div> #}
-								<div class="icon-chevron">
-									<img src="{{ asset('uploads/images/companies/chevron-right-solid.png') }}" alt="">
-								</div>
-							</a>
-						</div>
-					</div>
+			<ul class="companies-ul d-flex">
+				{% for firstLetter in firstLetters %}
+					<li>
+						<a href="#{{ firstLetter.letter }}">{{ firstLetter.letter }}</a>
+					</li>
 				{% endfor %}
-			</div>
+			</ul>
+			<hr>
+			{% include "companies/a-company.html.twig" %}
+			{% include "companies/b-company.html.twig" %}
+			{% include "companies/c-company.html.twig" %}
+			{% include "companies/d-company.html.twig" %}
+			{% include "companies/e-company.html.twig" %}
+			{% include "companies/f-company.html.twig" %}
+			{% include "companies/g-company.html.twig" %}
+			{% include "companies/h-company.html.twig" %}
+			{% include "companies/i-company.html.twig" %}
+			{% include "companies/j-company.html.twig" %}
+			{% include "companies/k-company.html.twig" %}
+			{% include "companies/l-company.html.twig" %}
+			{% include "companies/m-company.html.twig" %}
+			{% include "companies/o-company.html.twig" %}
+			{% include "companies/p-company.html.twig" %}
+			{% include "companies/q-company.html.twig" %}
+			{% include "companies/r-company.html.twig" %}
+			{% include "companies/s-company.html.twig" %}
+			{% include "companies/t-company.html.twig" %}
+			{% include "companies/u-company.html.twig" %}
+			{% include "companies/v-company.html.twig" %}
+			{% include "companies/w-company.html.twig" %}
 		</div>
 	</section>
 {% endblock %}

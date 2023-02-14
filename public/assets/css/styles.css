@@ -145,7 +145,6 @@ footer {
     text-decoration: none;
     color: #212529;
     height: 60px;
-
 }
 
 .airline-logo {
@@ -159,4 +158,27 @@ footer {
 
 .icon-chevron img {
     height: 25px;
+}
+
+.companies-ul {
+    list-style: none;
+}
+
+.companies-ul li {
+    padding-right: 25px;
+}
+
+.companies-ul li a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.letter {
+    font-size: 30px;
+    font-weight: 600;
+    color: #00314d;
+    padding: 10px 20px;
+    border: 1px solid #ffd000;
+    background: #ffd000;
+    width: 60px;
 }

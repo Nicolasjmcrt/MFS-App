@@ -55,15 +55,17 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Catégories d\'appareils', 'fas fa-tags');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
-            MenuItem::linkToCrud('Ajouter catégorie', 'fas fa-plus', PlanesCategory::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Voir categories', 'fas fa-eye', PlanesCategory::class)->setAction(Crud::PAGE_INDEX),
+            // Interdire l'acces a la page d'ajout de categorie si l'utilisateur n'a pas le role ROLE_ADMIN
+
+            MenuItem::linkToCrud('Ajouter catégorie', 'fas fa-plus', PlanesCategory::class)->setAction(Crud::PAGE_NEW)->setPermission('ROLE_ADMIN'),
+            MenuItem::linkToCrud('Voir categories', 'fas fa-eye', PlanesCategory::class)->setAction(Crud::PAGE_INDEX)->setPermission('ROLE_ADMIN'),
         ]);
 
         yield MenuItem::section('Compagnies aériennes', 'fas fa-building');
 
         yield MenuItem::subMenu('Actions', 'fas fa-screwdriver-wrench')->setSubItems([
-            MenuItem::linkToCrud('Ajouter compagnie', 'fas fa-plus', Company::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Voir compagnies', 'fas fa-eye', Company::class)->setAction(Crud::PAGE_INDEX),
+            MenuItem::linkToCrud('Ajouter compagnie', 'fas fa-plus', Company::class)->setAction(Crud::PAGE_NEW)->setPermission('ROLE_ADMIN'),
+            MenuItem::linkToCrud('Voir compagnies', 'fas fa-eye', Company::class)->setAction(Crud::PAGE_INDEX)->setPermission('ROLE_ADMIN'),
         ]);
 
         yield MenuItem::section('Aéroports', 'fas fa-plane-departure');

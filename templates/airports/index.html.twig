@@ -12,13 +12,13 @@
 			<div class="col">
 			</div>
 		</div> #}
-		<div class="row aircrafts-row">
-			<div class="col-12">
-				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des plus grands aéroports du monde.</p>
+		<div class="container">
+			<div class="col-12 col-lg-10 mx-auto">
+				<p class="aircrafts-p my-3">Retrouvez dans cette section la liste des plus grands aéroports du monde.</p>
 			</div>
 		</div>
         <div class="container">
-			<div class="row">
+			<div class="row my-5">
 				{% for airport in airports %}
 					<div class="col-12 col-lg-6 mx-auto my-3">
 						<div class="card h-100">
@@ -31,7 +31,7 @@
 									<small class="text-muted">Mis à jour le
 										{{ airport.updatedAt|format_datetime(locale='fr') }}</small>
 								</p>
-								<a href="#" class="btn btn-primary">Découvrir {{ airport.name }}</a>
+								<a href="#" class="btn btn-primary plane-btn">Découvrir {{ airport.name }}</a>
 							</div>
 						</div>
 					</div>

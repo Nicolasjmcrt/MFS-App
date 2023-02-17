@@ -11,21 +11,23 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class CompanyCrudController extends AbstractCrudController
 {
 
+    // Définir les constantes pour les chemins d'accès aux images
     public const COMPANIES_BASE_PATH = 'uploads/images/companies';
     public const COMPANIES_UPLOAD_DIR = 'public/uploads/images/companies';
 
+    
     public static function getEntityFqcn(): string
     {
         return Company::class;
     }
 
-    
+    // Définir les champs à afficher dans le formulaire d'ajout et de modification
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -59,6 +61,7 @@ class CompanyCrudController extends AbstractCrudController
         
         parent::persistEntity($entityManager, $entityInstance);
     }
+
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {

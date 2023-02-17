@@ -45,13 +45,15 @@ body {
     height: 100%;
 }
 
+.de-vinci {
+    font-size: clamp(17px, 3.5vw, 22px);
+}
+
 .next-flight {
     color: #005999;
-    font-size: 75px;
+    font-size: clamp(1.5rem, 5vw, 75px);
     font-weight: 700;
-    padding-top: 45px;
-    padding-left: 100px;
-    padding-bottom: 45px;
+    padding-left: 5%;
 }
 
 .rules-p {
@@ -59,7 +61,7 @@ body {
     font-weight: 300;
     line-height: 22px;
     color: #005999;
-    padding-left: 100px;
+    padding-left: 5%;
 }
 
 .btn-blue {
@@ -81,6 +83,7 @@ body {
 
 .hero-img {
     width: 100%;
+    margin-top: 71px;
     height: calc(100vh - 59px);
     object-fit: cover;
     object-position: center;
@@ -101,13 +104,13 @@ body {
     transform: translate(-10%, -80%);
     color: #FFFFFF;
     font-weight: 600;
-    font-size: 65px;
+    font-size: clamp(35px, 5vw, 75px);
     text-shadow: 2px 2px 4px #000000;
 }
 
 .home-first-p {
     font-weight: 300;
-    font-size: 22px;
+    font-size: clamp(17px, 3.5vw, 22px);
     width: 70%;
 }
 
@@ -120,11 +123,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #FFFFFF;
     text-shadow: 2px 2px 4px #000000;
     font-weight: 400;
     font-style: italic;
-    font-size: 50px;
+    font-size: clamp(35px, 5vw, 50px);
 }
 
 .quote-row {
@@ -158,11 +161,15 @@ sup {
 
 .aircrafts-p {
     font-weight: 300;
-    font-size: 23px;
+    font-size: clamp(17px, 3.5vw, 45px);
     margin-bottom: 0;
-    line-height: 70px;
+    padding-top: 15px;
 }
 
+.plane-btn {
+    background-color: #005999;
+    border-color: #005999;
+}
 
 footer {
     background-color: #005999;
@@ -172,6 +179,7 @@ footer {
 
 .page-hero-img {
     position: relative;
+    margin-top: 71px;
 }
 
 .card-company {

@@ -13,9 +13,9 @@
 			<div class="col">
 			</div>
 		</div> #}
-		<div class="row aircrafts-row">
-			<div class="col-12">
-				<p class="text-center aircrafts-p">Retrouvez dans cette section la liste des appareils présents dans le jeu.</p>
+		<div class="container">
+			<div class="col-12 col-lg-10 mx-auto d-flex justify-content-center">
+				<p class="aircrafts-p my-3">Retrouvez dans cette section la liste des appareils présents dans le jeu.</p>
 			</div>
 		</div>
 		<div class="container">
@@ -33,7 +33,7 @@
 									<small class="text-muted">Mis à jour le
 										{{ category.updatedAt|format_datetime(locale='fr') }}</small>
 								</p>
-								<a href="{{ path('category_list', {id: category.id }) }}" class="btn btn-primary">Voir les {{ category.name|lower }}</a>
+								<a href="{{ path('category_list', {id: category.id }) }}" class="btn btn-primary plane-btn">Voir les {{ category.name|lower }}</a>
 							</div>
 						</div>
 					</div>

@@ -50,7 +50,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les conditions d\'utilisation et la politique de confidentialité',
                     ]),
                 ],
                 'label' => 'J\'accepte les conditions d\'utilisation et la politique de confidentialité'
@@ -66,7 +66,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Mot de passe',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez saisir un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,

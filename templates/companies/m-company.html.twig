@@ -6,7 +6,7 @@
 		{% if company.firstLetter == 'M' %}
 			<div class="col-12 col-lg-4 my-2">
 				<div class="card card-company h-100">
-					<a href="{{ path('companies_show', {id: company.id }) }}" class="d-flex justify-content-around align-items-center company-link">
+					<a href="{{ path('companies_show', {slug: company.slug }) }}" class="d-flex justify-content-around align-items-center company-link">
 						<div class="airline-logo">
 							<img src="{{ asset('uploads/images/companies/' ~ company.image) }}" alt="">
 						</div>

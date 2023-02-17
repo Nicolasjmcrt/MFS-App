@@ -63,6 +63,9 @@ class Plane
     #[ORM\Column(nullable: true)]
     private ?int $wingspan = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -256,6 +259,18 @@ class Plane
     public function setWingspan(?int $wingspan): self
     {
         $this->wingspan = $wingspan;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

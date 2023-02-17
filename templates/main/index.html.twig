@@ -11,11 +11,10 @@
 		</div>
 		<div class="row home-row">
 			<div class="col-8 d-flex justify-content-center">
-				<p class="home-first-p">Bienvenue sur MFS App !<br>Ce site non-officiel est à principe collaboratif et chacun est libre d'apporter sa contribution<sup>*</sup>.<br>Envie d'ajouter un nouvel appareil, un aéroport ou une compagnie aérienne, il suffit juste de s'inscrire
-													et c'est à vous de jouer !</p>
+				<p class="home-first-p">Bienvenue sur MFS App !<br>Ce site non-officiel est à principe collaboratif et chacun est libre d'apporter sa contribution<sup>*</sup>.<br>Envie d'ajouter un nouvel appareil, un aéroport ou une compagnie aérienne, il suffit juste de s'inscrire et c'est à vous de jouer !</p>
 			</div>
 			<div class="col-4 d-flex justify-content-center align-items-center">
-				<a href="{{ path('app_register') }}" role="button" class="btn btn-light mt-3">Créer un compte</a>
+				<a href="{{ path('app_register') }}" role="button" class="btn btn-light mt-3 register-btn">Créer un compte</a>
 			</div>
 		</div>
 		<div class="container-fluid hero-container">
@@ -52,7 +51,18 @@
 						</button>
 					</div>
 				</div>
-				<div class="col-12 col-md6"></div>
+				<div class="col-12 col-md-6 right">
+					<div class="right-container d-flex flex-column justify-content-around">
+						<h2 class="next-flight">Réservez votre<br>prochain vol !</h2>
+						<div class="rules">
+							<p class="rules-p">Vous souhaitez faire partie de l’aventure et voulez contribuer à alimenter le site, aucun problème.</p>
+							<p class="rules-p">Assurez-vous de bien prendre connaissance des règles de contribution et de suivre ces recommandations pour le bien-être du site.</p>
+						</div>
+						<div class="rules-button d-flex justify-content-center">
+							<a type="button" class="btn mx-auto btn-blue mt-3 rules-btn">Voir les règles</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row quote-row d-flex justify-content-center">
@@ -66,5 +76,5 @@
 			</figure>
 		</div>
 		<img src="{{ asset('uploads/images/main/mkh-bottom.webp') }}" class="img-fluid" alt="MFS Hero Image">
-	</div>
-</section>{% endblock %}
+	</section>
+{% endblock %}

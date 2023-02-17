@@ -22,7 +22,7 @@ class CompaniesController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'show')]
+    #[Route('/{slug}', name: 'show')]
     public function show(Company $company): Response
     {
         return $this->render('companies/show.html.twig', compact('company'));

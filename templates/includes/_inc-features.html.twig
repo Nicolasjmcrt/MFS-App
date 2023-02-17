@@ -1,0 +1,59 @@
+{% if plane.maxSpeed %}
+    <p class="features-p">Vitesse max. : {{ plane.maxSpeed }} km/h</p>
+{% else %}
+    <p class="features-p">Vitesse max. : - km/h</p>
+{% endif %}
+
+{% if plane.cruisingSpeed %}
+    <p class="features-p">Vitesse de croisière : {{ plane.cruisingSpeed }} km/h</p>
+{% else %}
+    <p class="features-p">Vitesse de croisière : - km/h</p>
+{% endif %}
+
+{% if plane.engine %}
+    <p class="features-p">Moteur : {{ plane.engine }}</p>
+{% else %}
+    <p class="features-p">Moteur : -</p>
+{% endif %}
+
+{% if plane.maxElevation %}
+    <p class="features-p">Altitude max. : {{ plane.maxElevation }} m</p>
+{% else %}
+    <p class="features-p">Altitude max. : - m</p>
+{% endif %}
+
+{% if plane.emptyWeight %}
+    <p class="features-p">Masse à vide : {{ plane.emptyWeight }} kg</p>
+{% else %}
+    <p class="features-p">Masse à vide : - kg</p>
+{% endif %}
+
+{% if plane.maxWeight %}
+    <p class="features-p">Poids max. : {{ plane.maxWeight }} kg</p>
+{% else %}
+    <p class="features-p">Poids max. : - kg</p>
+{% endif %}
+
+{% if plane.rangeOfAction %}
+    <p class="features-p">Rayon d'action : {{ plane.rangeOfAction }} km</p>
+{% else %}
+    <p class="features-p">Rayon d'action : - km</p>
+{% endif %}
+
+{% if plane.fuelCapacity %}
+    <p class="features-p">Capacité de carburant : {{ plane.fuelCapacity }} L</p>
+{% else %}
+    <p class="features-p">Capacité de carburant : - L</p>
+{% endif %}
+
+{% if plane.length %}
+    <p class="features-p">Longueur : {{ plane.length }} m</p>
+{% else %}
+    <p class="features-p">Longueur : - m</p>
+{% endif %}
+
+{% if plane.wingspan %}
+    <p class="features-p">Envergure : {{ plane.wingspan }} m</p>
+{% else %}
+    <p class="features-p">Envergure : - m</p>
+{% endif %}

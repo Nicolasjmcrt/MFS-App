@@ -30,7 +30,7 @@
 									<small class="text-muted">Mis à jour le
 										{{ plane.updatedAt|format_datetime(locale='fr') }}</small>
 								</p>
-								<a href="{{ path('planes_show', {id: plane.id }) }}" class="btn btn-primary">Voir le {{ plane.name }}</a>
+								<a href="{{ path('planes_show', {slug: plane.slug }) }}" class="btn btn-primary">Voir le {{ plane.name }}</a>
 							</div>
 						</div>
 					</div>

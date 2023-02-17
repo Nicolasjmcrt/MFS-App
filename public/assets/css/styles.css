@@ -8,6 +8,14 @@ body {
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'B612', sans-serif;
     font-size: 18px;
+    color: #005999;
+}
+
+.navbar-brand {
+    color: #005999!important;
+}
+.nav-link {
+    color: #005999!important;
 }
 
 .hero-container {
@@ -24,14 +32,50 @@ body {
     height: 80vh;
 }
 
+.register-btn {
+    color: #005999;
+}
+
 .double-row>.left {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
+.right-container {
+    height: 100%;
+}
+
+.next-flight {
+    color: #005999;
+    font-size: 75px;
+    font-weight: 700;
+    padding-top: 45px;
+    padding-left: 100px;
+    padding-bottom: 45px;
+}
+
+.rules-p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    color: #005999;
+    padding-left: 100px;
+}
+
+.btn-blue {
+    background-color: #005999;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-style: italic;
+    font-size: 20px;
+    transition: 300ms;
+}
+
 .home-row {
     padding: 5vh 0;
-    background-color: #00314d;
+    background-color: #005999;
     color: #fff;
 }
 
@@ -64,7 +108,6 @@ body {
 .home-first-p {
     font-weight: 300;
     font-size: 22px;
-    font-style: italic;
     width: 70%;
 }
 
@@ -85,7 +128,7 @@ body {
 }
 
 .quote-row {
-    background-color: #00314d;
+    background-color: #005999;
     color: #fff;
     padding: 5vh 0;
 }
@@ -108,7 +151,7 @@ sup {
 }
 
 .aircrafts-row {
-    background-color: #00314d;
+    background-color: #005999;
     color: #fff;
     padding: 5vh 0;
 }
@@ -122,7 +165,7 @@ sup {
 
 
 footer {
-    background-color: #00314d;
+    background-color: #005999;
     color: #fff;
     padding: 5vh 0;
 }
@@ -162,6 +205,8 @@ footer {
 
 .companies-ul {
     list-style: none;
+    overflow: hidden;
+    overflow-x: auto;
 }
 
 .companies-ul li {
@@ -170,15 +215,50 @@ footer {
 
 .companies-ul li a {
     text-decoration: none;
-    color: #212529;
+    color: #005999;
 }
 
+.test-link {
+    text-decoration: none;
+    color: #005999;
+}
 .letter {
     font-size: 30px;
     font-weight: 600;
-    color: #00314d;
+    color: #005999;
     padding: 10px 20px;
     border: 1px solid #ffd000;
     background: #ffd000;
     width: 60px;
+}
+
+.features-p {
+    font-size: 20px;
+    margin-bottom: 0!important;
+}
+
+.plane-show-img {
+    border-radius: 20px;
+}
+
+.plane-show-p {
+    text-align: justify;
+}
+
+.brands-img {
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.coyotech-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
 }

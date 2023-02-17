@@ -39,6 +39,9 @@ class Company
     #[ORM\JoinColumn(nullable: false)]
     private ?CompanyFirstLetter $first_letter = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +139,18 @@ class Company
     public function setFirstLetter(?CompanyFirstLetter $first_letter): self
     {
         $this->first_letter = $first_letter;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

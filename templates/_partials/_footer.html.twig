@@ -1,8 +1,22 @@
 <footer>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col">Colonne 1</div>
-			<div class="col">Colonne 2</div>
+			<div class="col-12 col-md-10 mx-auto d-flex flex-column align-items-center">
+				<div class="brands d-flex justify-content-between">
+					<a href="https://www.xbox.com/fr-FR/xbox-game-studios">
+						<img class="img-fluid brands-img" src="{{ asset('uploads/images/main/xbox.png') }}" alt="Xbox Games Studios">
+					</a>
+					<a href="https://www.asobostudio.com/fr">
+						<img class="img-fluid brands-img" src="{{ asset('uploads/images/main/asobo.png') }}" alt="Asobo Studio">
+					</a>
+					<a href="https://www.microsoft.com/fr-fr/windows/compare-windows-10-home-vs-pro">
+						<img class="img-fluid brands-img" src="{{ asset('uploads/images/main/windows-10.png') }}" alt="Windows 10">
+					</a>
+				</div>
+				<p class="disclaimer" >Les logos, captures et marques utilisés sur ce site sont les propriétés respectives de Asobo Studio et Microsoft.</p>
+				<a class="coyotech-link" href="https://coyotech.fr/blog-mvc/">CoyoTech</a>
+				<p>Copyright © {{ "now"|date("Y") }} MFS App - CoyoTech</p>
+			</div>
 		</div>
 	</div>
 </footer>

@@ -6,6 +6,8 @@ use DateTimeImmutable;
 use App\Entity\Airport;
 use InvalidArgumentException;
 use Doctrine\ORM\EntityManagerInterface;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -28,7 +30,7 @@ class AirportCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            TextEditorField::new('description'),
+            TextEditorField::new('description')->setFormType(CKEditorType::class),
             ImageField::new('image')
             ->setBasePath(self::AIRPORTS_BASE_PATH)
             ->setUploadDir(self::AIRPORTS_UPLOAD_DIR)
@@ -37,6 +39,12 @@ class AirportCrudController extends AbstractCrudController
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void

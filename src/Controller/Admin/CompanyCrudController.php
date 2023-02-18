@@ -6,6 +6,8 @@ use DateTimeImmutable;
 use App\Entity\Company;
 use InvalidArgumentException;
 use Doctrine\ORM\EntityManagerInterface;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -35,7 +37,7 @@ class CompanyCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('slug'),
             TextField::new('code'),
-            TextEditorField::new('description'),
+            TextEditorField::new('description')->setFormType(CKEditorType::class),
             AssociationField::new('first_letter'),
             ImageField::new('image')
             ->setBasePath(self::COMPANIES_BASE_PATH)
@@ -50,6 +52,12 @@ class CompanyCrudController extends AbstractCrudController
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void

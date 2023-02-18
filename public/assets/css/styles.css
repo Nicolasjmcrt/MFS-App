@@ -11,6 +11,11 @@ body {
     color: #005999;
 }
 
+.flash-message {
+    margin-top: 100px;
+    z-index: 100;
+}
+
 .navbar-brand {
     color: #005999!important;
 }

@@ -1,20 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfileController!{% endblock %}
+{% block title %}Profil utilisateur
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/nicolasjumeaucourt/Desktop/MFS-App/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/nicolasjumeaucourt/Desktop/MFS-App/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<div class="container my-3">
+		<div class="row register-row d-flex align-items-center">
+			<h1 class="my-4">Bonjour
+				{{ app.user.firstname }}
+				!</h1>
+			<p class="my-4">Vous venez de vous créer un compte sur MFS App afin de contribuer au site.<br>Mais avant de poster votre première contribuation, assurez-vous de bien avoir consulter les recommandations de contributions du site.<br>Elles sont essentielles pour que la plateforme conserve une présentation optimale.<br>Nous vous remercions d'avance pour votre compréhension et vos prochaines contributions.<br>L'équipe MFS App.</p>
+		</div>
+	</div>
 {% endblock %}

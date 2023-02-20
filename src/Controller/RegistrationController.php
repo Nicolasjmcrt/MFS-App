@@ -71,6 +71,10 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+
+        // envoyer vers la page profile
+
+        return $this->redirectToRoute('profile_index');
     }
 
     #[Route('/verify/{token}', name: 'verify_user')]

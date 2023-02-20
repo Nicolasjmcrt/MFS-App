@@ -21,7 +21,7 @@ class DashboardController extends AbstractDashboardController
     {
     }
 
-    // Empecher l'acces a la page d'administration si l'utilisateur n'est pas connecte
+    // Empecher l'acces a la page d'administration si l'utilisateur n'est pas connecte ou s'il n'est pas verifie
 
     #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]

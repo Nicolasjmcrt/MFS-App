@@ -26,9 +26,15 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('profile_index') }}">Mon compte</a>
 					</li>
-					<li class="nav-item">
+					{# Empêcher l'accès à la page admin si l'utilisateur n'est pas vérifié #}
+					{% if app.user.isVerified %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('admin') }}">Admin</a>
+						</li>
+					{% endif %}
+					{# <li class="nav-item">
 						<a class="nav-link" href="{{ path('admin') }}">Admin</a>
-					</li>
+					</li> #}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
 					</li>

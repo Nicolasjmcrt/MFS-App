@@ -6,9 +6,15 @@ use DateTimeImmutable;
 use App\Entity\Airport;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AirportsFixtures extends Fixture
 {
+
+    public function __construct(
+        private SluggerInterface $slugger
+    ){}
+    
     public function load(ObjectManager $manager): void
     {
         $airport = new Airport();
@@ -21,6 +27,17 @@ class AirportsFixtures extends Fixture
         La mondialisation a atteint doucement Atlanta. En 1978, la compagnie nationale belge Sabena a été la première compagnie étrangère à être représentée. Jimmy Carter, le nouveau président, était un ami du consul général de Belgique.");
         $airport->setImage('9b37a6cf8f908610b8c198239348780762e9409a.png');
         $airport->setCreatedAt(new DateTimeImmutable());
+        $airport->setSlug($this->slugger->slug($airport->getName())->lower());
+        $manager->persist($airport);
+
+        $airport = new Airport();
+        $airport->setName('Los Angeles International Airport (LAX)');
+        $airport->setDescription("L'aéroport international de Los Angeles (en anglais : Los Angeles International Airport), connu localement sous le sigle LAX (chaque lettre se prononce individuellement) (code IATA : LAX • code OACI : KLAX), est un aéroport américain desservant Los Angeles (Californie) et son agglomération.
+        Il s'agit du troisième aéroport mondial quant au trafic de passagers, avec plus de 88 millions de personnes qui en font usage en 2019, ainsi que du deuxième aux États-Unis après l'aéroport international Hartsfield-Jackson d'Atlanta. Il est également deuxième au niveau national après l'aéroport international John F. Kennedy de New York en nombre de passagers pour les vols internationaux. Selon les données de 2010, il est le troisième aéroport au monde quant aux mouvements d'avions, avec 666 938 atterrissages et décollages.
+        En moyenne, toutes les 30 secondes, un avion atterrit ou décolle. En raison des circulations très denses sur les quatre pistes, des accidents au sol ont régulièrement lieu, bien que le dernier à l'issue fatale remonte à 1991. Aéroport le plus important de la côte ouest des États-Unis, suivi de celui de San Francisco, l'aéroport international de Los Angeles est une plate-forme de correspondance importante pour plusieurs compagnies aériennes américaines, notamment United Airlines, Alaska Airlines, American Airlines, Southwest Airlines, Allegiant Air et Delta Air Lines.");
+        $airport->setImage('c0fea307c787cd82b32f337aec6e3720b8135bb2.png');
+        $airport->setCreatedAt(new DateTimeImmutable());
+        $airport->setSlug($this->slugger->slug($airport->getName())->lower());
         $manager->persist($airport);
 
         $manager->flush();

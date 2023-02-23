@@ -19,7 +19,7 @@ class AirportsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'show')]
+    #[Route('/{slug}', name: 'show')]
     public function show(Airport $airport): Response
     {
         return $this->render('airports/show.html.twig', compact('airport'));

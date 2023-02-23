@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ airport.name }}
+{% endblock %}
+
+{% block body %}
+	<section class="container-fluid hero-container">
+		<div class="page-hero-img d-flex justify-content-center">
+			<img src="{{ asset('uploads/images/main/hero-airports-v2.webp') }}" alt="{{ airport.name }}" class="img-fluid">
+			<h1 class="text-center aircrafts-h1">{{ airport.name }}</h1>
+		</div>
+		<div class="container my-5">
+			<div class="row d-flex align-items-center justify-content-center my-5">
+				{# <div class="col-12 col-md-6">
+					<h2 class=" aircrafts-h2">{{ airport.name }}</h2>
+				</div> #}
+				<div class="col-10 d-flex justify-content-center">
+					<img src="{{ asset('uploads/images/airports/'~ airport.image) }}" alt="" class="img-fluid plane-show-img airport-hero-show">
+				</div>
+			</div>
+			<hr>
+			<div class="col-10 col-md-8 mx-auto">
+				<p class="text-wrap plane-show-p mb-5">{{ airport.description|raw }}</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}

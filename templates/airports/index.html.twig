@@ -31,7 +31,7 @@
 									<small class="text-muted">Mis à jour le
 										{{ airport.updatedAt|format_datetime(locale='fr') }}</small>
 								</p>
-								<a href="#" class="btn btn-primary plane-btn">Découvrir {{ airport.name }}</a>
+								<a href="{{ path('airports_show', {slug: airport.slug }) }}" class="btn btn-primary plane-btn">Découvrir {{ airport.name }}</a>
 							</div>
 						</div>
 					</div>

@@ -43,36 +43,52 @@ class PlaneCrudController extends AbstractCrudController
             ->reorder(Crud::PAGE_EDIT, [self::ACTION_DUPLICATE, Action::SAVE_AND_RETURN]);
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')
+                ->hideOnForm(),
             TextField::new('name'),
-            TextField::new('slug'),
-            TextEditorField::new('description')->setFormType(CKEditorType::class),
+            TextField::new('slug')
+                ->hideOnIndex(),
+            TextEditorField::new('description')
+                ->setFormType(CKEditorType::class)
+                ->hideOnIndex(),
             ImageField::new('image')
                 ->setBasePath(self::PLANES_BASE_PATH)
                 ->setUploadDir(self::PLANES_UPLOAD_DIR)->setUploadedFileNamePattern('[randomhash].[extension]')->setRequired(false),
-            DateTimeField::new('createdAt')->hideOnForm(),
-            DateTimeField::new('updatedAt')->hideOnForm(),
-            AssociationField::new('category')->setQueryBuilder(function(QueryBuilder $queryBuilder) {
-                $queryBuilder->where('entity.active = true');
-            }),
-            IntegerField::new('maxSpeed'),
-            IntegerField::new('cruisingSpeed'),
-            TextField::new('engine'),
-            IntegerField::new('maxElevation'),
-            IntegerField::new('emptyWeight'),
-            IntegerField::new('maxWeight'),
-            IntegerField::new('rangeOfAction'),
-            IntegerField::new('fuelCapacity'),
-            IntegerField::new('length'),
-            IntegerField::new('wingspan'),
+            DateTimeField::new('createdAt')
+                ->hideOnForm(),
+            DateTimeField::new('updatedAt')
+                ->hideOnForm(),
+            AssociationField::new('category')
+                ->setQueryBuilder(function (QueryBuilder $queryBuilder) {
+                    $queryBuilder->where('entity.active = true');
+                }),
+            IntegerField::new('maxSpeed')
+                ->hideOnIndex(),
+            IntegerField::new('cruisingSpeed')
+                ->hideOnIndex(),
+            TextField::new('engine')
+                ->hideOnIndex(),
+            IntegerField::new('maxElevation')
+                ->hideOnIndex(),
+            IntegerField::new('emptyWeight')
+                ->hideOnIndex(),
+            IntegerField::new('maxWeight')
+                ->hideOnIndex(),
+            IntegerField::new('rangeOfAction')
+                ->hideOnIndex(),
+            IntegerField::new('fuelCapacity')
+                ->hideOnIndex(),
+            IntegerField::new('length')
+                ->hideOnIndex(),
+            IntegerField::new('wingspan')
+                ->hideOnIndex(),
         ];
-
     }
-    
+
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
@@ -100,7 +116,7 @@ class PlaneCrudController extends AbstractCrudController
         parent::updateEntity($entityManager, $entityInstance);
     }
     */
-    
+
     public function duplicatePlane(AdminContext $context, EntityManagerInterface $em, AdminUrlGenerator $adminUrlGenerator): Response
     {
         /** @var Plane $plane */
